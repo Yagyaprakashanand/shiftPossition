@@ -1,0 +1,28 @@
+function shiftPossition(arr)
+{
+    let arr1= Array(arr.length);
+    let j = 0;
+    
+    for (let i = 0; i < arr.length ; i++)
+        if (arr[i] >= 0 )
+            arr1[j++] = arr[i];
+            
+    if (j == arr.length || j == 0)
+        return;
+
+    for (let i = 0 ; i < arr.length; i++)
+        if (arr[i] < 0)
+            arr1[j++] = arr[i];
+
+   for (let i = 0; i < arr.length; i++) arr[i] = arr1[i];
+}
+
+
+let arr= [-5, 3, -4, 88, -9, -10, 21, 5, 6];
+
+
+shiftPossition(arr);
+
+for (let i = 0; i < arr.length; i++){
+console.log(arr[i] + " ");
+}
